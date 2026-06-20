@@ -91,13 +91,44 @@ function App() {
           </p>
         </div>
       )}
+
+      <div style={styles.insights}>
+        <h2 style={styles.insightsTitle}>📊 Model Insights</h2>
+
+        <div style={styles.chartCard}>
+          <h3 style={styles.chartTitle}>Feature Correlation Matrix</h3>
+          <img
+            src="http://127.0.0.1:5000/static/correlation.png"
+            alt="Correlation Heatmap"
+            style={styles.chart}
+          />
+        </div>
+
+        <div style={styles.chartCard}>
+          <h3 style={styles.chartTitle}>Feature Importance</h3>
+          <img
+            src="http://127.0.0.1:5000/static/feature_importance.png"
+            alt="Feature Importance"
+            style={styles.chart}
+          />
+        </div>
+
+        <div style={styles.chartCard}>
+          <h3 style={styles.chartTitle}>Confusion Matrix</h3>
+          <img
+            src="http://127.0.0.1:5000/static/confusion_matrix.png"
+            alt="Confusion Matrix"
+            style={styles.chart}
+          />
+        </div>
+      </div>
     </div>
   );
 }
 
 const styles = {
   container: {
-    maxWidth: "700px",
+    maxWidth: "800px",
     margin: "40px auto",
     fontFamily: "Segoe UI, sans-serif",
     padding: "20px"
@@ -164,6 +195,31 @@ const styles = {
   },
   advice: {
     color: "#555"
+  },
+  insights: {
+    marginTop: "50px"
+  },
+  insightsTitle: {
+    textAlign: "center",
+    color: "#2c3e50",
+    fontSize: "1.5rem",
+    marginBottom: "20px"
+  },
+  chartCard: {
+    backgroundColor: "#f9f9f9",
+    padding: "20px",
+    borderRadius: "12px",
+    boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+    marginBottom: "30px"
+  },
+  chartTitle: {
+    color: "#333",
+    marginBottom: "15px",
+    fontSize: "1rem"
+  },
+  chart: {
+    width: "100%",
+    borderRadius: "8px"
   }
 };
 
