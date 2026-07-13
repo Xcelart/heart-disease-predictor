@@ -26,7 +26,7 @@ def predict():
 
 @app.route('/static/<filename>')
 def serve_image(filename):
-    static_folder = os.path.join(os.path.dirname(__file__), '..', 'static')
+   static_folder = os.path.join(os.path.dirname(__file__), '..', 'static')
     static_folder = os.path.abspath(static_folder)
     return send_from_directory(static_folder, filename)
 
