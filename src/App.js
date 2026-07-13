@@ -17,7 +17,7 @@ function App() {
   const handleSubmit = async () => {
     setLoading(true);
     const features = Object.values(formData).map(Number);
-    const response = await fetch("http://127.0.0.1:5000/predict", {
+    const response = await fetch("https://heart-disease-predictor-h9do.onrender.com/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ features })
@@ -98,7 +98,7 @@ function App() {
         <div style={styles.chartCard}>
           <h3 style={styles.chartTitle}>Feature Correlation Matrix</h3>
           <img
-            src="http://127.0.0.1:5000/static/correlation.png"
+            src="https://heart-disease-predictor-h9do.onrender.com/static/correlation.png"
             alt="Correlation Heatmap"
             style={styles.chart}
           />
@@ -107,7 +107,7 @@ function App() {
         <div style={styles.chartCard}>
           <h3 style={styles.chartTitle}>Feature Importance</h3>
           <img
-            src="http://127.0.0.1:5000/static/feature_importance.png"
+            src="https://heart-disease-predictor-h9do.onrender.com/static/feature_importance.png"
             alt="Feature Importance"
             style={styles.chart}
           />
@@ -116,7 +116,7 @@ function App() {
         <div style={styles.chartCard}>
           <h3 style={styles.chartTitle}>Confusion Matrix</h3>
           <img
-            src="http://127.0.0.1:5000/static/confusion_matrix.png"
+            src="https://heart-disease-predictor-h9do.onrender.com/static/confusion_matrix.png"
             alt="Confusion Matrix"
             style={styles.chart}
           />
