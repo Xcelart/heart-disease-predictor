@@ -26,8 +26,9 @@ def predict():
 
 @app.route('/static/<filename>')
 def serve_image(filename):
-    static_folder = os.path.join(os.path.dirname(__file__), '..', 'static')
-    static_folder = os.path.abspath(static_folder)
+    static_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'static'))
+    print("Looking for images in:", static_folder)
+    print("File exists:", os.path.exists(os.path.join(static_folder, filename)))
     return send_from_directory(static_folder, filename)
 
 @app.route('/health', methods=['GET'])
